@@ -50,7 +50,8 @@ module.exports = {
               ++loadedProps;
               break;
             case 'Vehicle':
-              mp.vehicles.new(parseInt(object.Hash), new mp.Vector3(parseFloat(object.Position.X), parseFloat(object.Position.Y), parseFloat(object.Position.Z)));
+              let vehicleR = mp.vehicles.new(parseInt(object.Hash), new mp.Vector3(parseFloat(object.Position.X), parseFloat(object.Position.Y), parseFloat(object.Position.Z)));
+              vehicleR.rotation = new mp.Vector3(parseFloat(object.Rotation.X), parseFloat(object.Rotation.Y), parseFloat(object.Rotation.Z));
               ++loadedVehicles;
               break;
             default:
